@@ -1,0 +1,28 @@
+<div class="container mt-4 "  style="width: 32rem">
+  <div class="card mx-auto text-center">
+    <div class="card=body">
+
+      <div class="text-primary mb-4 mt-3">
+        <h2>Typing Challenge</h2>
+      </div>
+
+      <p>
+        <span [class]="compare(letter,enterText[vada])"
+        *ngFor="let letter of randomtext.split('');let vada=index;">{{letter}}</span>
+      </p>
+
+      <button class="btn btn-success" (click)="refresh()">
+        refresh
+      </button>
+
+      <div class="input-group mt-4 mb-2 fs-3  mx-auto" style="width: 20rem;">
+        <input #vada (keyup)="onInput(vada.value)" type="text" class="form-control" placeholder="Start typing here..">
+      </div>
+      
+      <div>
+        <p class="text-success mb-4" *ngIf="randomtext === enterText">SuccessFull Typing!...</p>
+      </div>
+
+    </div>
+  </div>
+</div>
